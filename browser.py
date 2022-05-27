@@ -72,7 +72,7 @@ class Browser:
 		return takipler
 
 	def compare(self,takipçiler,takipler):
-		fenomenler =  ['ankaderresmi', 'birlikteskilati', 'gurbeyahmedov', 'annelersatiyorcom', 'av.dr.aslanabiduguz_karate', 'leilapolak', 'pendikitosaaihl', 'gtuedutr', 'bitcicom', 'bitcicomglobal', 'evrimshinka', 'karate_turk', 'yasiryilmaz0', 'kaanbosnakofficial', 'unlostv', 'skamaroshek', 'rnfkk_kyokushin_official', 'rraenee', 'kyokushinspirit', 'superkarate', 'tugkangonultas', 'tburaksahin', 'tolgaozuygur', 'ismetozeltr', 'gencliksporbak', 'enesbatur', 'kendinemuzisyen', 'yuzyuzeykenkonusuruz', 'delimine', 'formulaonereels', 'eftalyayagcii', 'barisozcan', 'cembolukbasi', 'fatihyasinim', 'atakanozyurt', 'berkcan', '1kyokushin', 'yuzyuzeykens', 'yeniikinciler', 'rterdogan', 'ekremimamoglu', 'firatalbayram', 'webtekno', 'bilalhanci', 'f1', 'charles_leclerc', 'ceydakasabali', 'landonorris', 'egefitness']
+		fenomenler =  ["berkriptepe",'ankaderresmi', 'birlikteskilati', 'gurbeyahmedov', 'annelersatiyorcom', 'av.dr.aslanabiduguz_karate', 'leilapolak', 'pendikitosaaihl', 'gtuedutr', 'bitcicom', 'bitcicomglobal', 'evrimshinka', 'karate_turk', 'yasiryilmaz0', 'kaanbosnakofficial', 'unlostv', 'skamaroshek', 'rnfkk_kyokushin_official', 'rraenee', 'kyokushinspirit', 'superkarate', 'tugkangonultas', 'tburaksahin', 'tolgaozuygur', 'ismetozeltr', 'gencliksporbak', 'enesbatur', 'kendinemuzisyen', 'yuzyuzeykenkonusuruz', 'delimine', 'formulaonereels', 'eftalyayagcii', 'barisozcan', 'cembolukbasi', 'fatihyasinim', 'atakanozyurt', 'berkcan', '1kyokushin', 'yuzyuzeykens', 'yeniikinciler', 'rterdogan', 'ekremimamoglu', 'firatalbayram', 'webtekno', 'bilalhanci', 'f1', 'charles_leclerc', 'ceydakasabali', 'landonorris', 'egefitness']
 		f = open("gt.txt","w")
 		not_follower = []
 		for i in takipler:
@@ -117,17 +117,17 @@ class Browser:
 
 		loginBtn = self.browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button/div')
 		loginBtn.click()
-		# time.sleep(4)
+		time.sleep(4)
   
-		# verification_code = input("Enter verification code: ")
+		verification_code = input("Enter verification code: ")
   
-		# time.sleep(60)
+		time.sleep(60)
   
-		# code = self.browser.find_element_by_name("verificationCode")
-		# code.send_keys(verification_code)
+		code = self.browser.find_element_by_name("verificationCode")
+		code.send_keys(verification_code)
   
-		# verify_button = self.browser.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div[2]/button')
-		# verify_button.click()
+		verify_button = self.browser.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div[2]/button')
+		verify_button.click()
 		time.sleep(10)
   
 		self.browser.execute_script(f'''window.open("{self.link+"/"+kb.userName}");''')
