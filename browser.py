@@ -6,13 +6,13 @@ from selenium.webdriver.chrome.options import Options
 class Browser:
 	def __init__(self,link):
 		self.link = link
-		chrome_options = Options()
-		chrome_options.add_argument('--headless')
-		chrome_options.add_argument('--no-sandbox')
-		chrome_options.add_argument('--disable-dev-shm-usage')
+		# chrome_options = Options()
+		# chrome_options.add_argument('--headless')
+		# chrome_options.add_argument('--no-sandbox')
+		# chrome_options.add_argument('--disable-dev-shm-usage')
   
-		self.browser = webdriver.Chrome("./chromedriver.exe",chrome_options=chrome_options)
-		# self.browser = webdriver.Chrome(executable_path="./chromedriver.exe")
+		# self.browser = webdriver.Chrome("./chromedriver.exe",chrome_options=chrome_options)
+		self.browser = webdriver.Chrome(executable_path="./chromedriver.exe")
 		self.userName = kb.userName
 		self.password = kb.password
 		Browser.goInstagram(self)
@@ -33,7 +33,7 @@ class Browser:
 		Browser.scrollDown(self)
 		time.sleep(2)
 
-		takipciler = self.browser.find_elements_by_css_selector(".notranslate._aaek._a6hd") 
+		takipciler = self.browser.find_elements_by_css_selector(".oajrlxb2.g5ia77u1.qu0x051f.esr5mh6w.e9989ue4.r7d6kgcz.rq0escxv.nhd2j8a9.nc684nl6.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.jb3vyjys.rz4wbd8a.qt6c0cv9.a8nywdso.i1ao9s8h.esuyzwwr.f1sip0of.lzcic4wl.notranslate._a6hd") 
 		sayac = 0
 		takipçiler = []
 		for takipci in takipciler:
@@ -57,7 +57,7 @@ class Browser:
 		time.sleep(4)
 		Browser.scrollDown(self)
 		time.sleep(2)
-		takip_edilenler = self.browser.find_elements_by_css_selector(".notranslate._aaek._a6hd")
+		takip_edilenler = self.browser.find_elements_by_css_selector(".oajrlxb2.g5ia77u1.qu0x051f.esr5mh6w.e9989ue4.r7d6kgcz.rq0escxv.nhd2j8a9.nc684nl6.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.jb3vyjys.rz4wbd8a.qt6c0cv9.a8nywdso.i1ao9s8h.esuyzwwr.f1sip0of.lzcic4wl.notranslate._a6hd")
 		takipler = []
 		sayac = 0
 		for takip in takip_edilenler:
@@ -73,17 +73,17 @@ class Browser:
 		return takipler
 
 	def compare(self,takipçiler,takipler):
-		fenomenler =  ["berkriptepe",'ankaderresmi', 'birlikteskilati', 'gurbeyahmedov', 'annelersatiyorcom', 'av.dr.aslanabiduguz_karate', 'leilapolak', 'pendikitosaaihl', 'gtuedutr', 'bitcicom', 'bitcicomglobal', 'evrimshinka', 'karate_turk', 'yasiryilmaz0', 'kaanbosnakofficial', 'unlostv', 'skamaroshek', 'rnfkk_kyokushin_official', 'rraenee', 'kyokushinspirit', 'superkarate', 'tugkangonultas', 'tburaksahin', 'tolgaozuygur', 'ismetozeltr', 'gencliksporbak', 'enesbatur', 'kendinemuzisyen', 'yuzyuzeykenkonusuruz', 'delimine', 'formulaonereels', 'eftalyayagcii', 'barisozcan', 'cembolukbasi', 'fatihyasinim', 'atakanozyurt', 'berkcan', '1kyokushin', 'yuzyuzeykens', 'yeniikinciler', 'rterdogan', 'ekremimamoglu', 'firatalbayram', 'webtekno', 'bilalhanci', 'f1', 'charles_leclerc', 'ceydakasabali', 'landonorris', 'egefitness']
+		# fenomenler =  ["berkriptepe",'ankaderresmi', 'birlikteskilati', 'gurbeyahmedov', 'annelersatiyorcom', 'av.dr.aslanabiduguz_karate', 'leilapolak', 'pendikitosaaihl', 'gtuedutr', 'bitcicom', 'bitcicomglobal', 'evrimshinka', 'karate_turk', 'yasiryilmaz0', 'kaanbosnakofficial', 'unlostv', 'skamaroshek', 'rnfkk_kyokushin_official', 'rraenee', 'kyokushinspirit', 'superkarate', 'tugkangonultas', 'tburaksahin', 'tolgaozuygur', 'ismetozeltr', 'gencliksporbak', 'enesbatur', 'kendinemuzisyen', 'yuzyuzeykenkonusuruz', 'delimine', 'formulaonereels', 'eftalyayagcii', 'barisozcan', 'cembolukbasi', 'fatihyasinim', 'atakanozyurt', 'berkcan', '1kyokushin', 'yuzyuzeykens', 'yeniikinciler', 'rterdogan', 'ekremimamoglu', 'firatalbayram', 'webtekno', 'bilalhanci', 'f1', 'charles_leclerc', 'ceydakasabali', 'landonorris', 'egefitness']
 		f = open("gt.txt","w")
 		not_follower = []
 		for i in takipler:
 			if i in takipçiler:
 				continue
 			else:
-				if i in fenomenler:
-					continue
-				else:
-					not_follower.append(i)
+				# if i in fenomenler:
+				# 	continue
+				# else:
+				not_follower.append(i)
 
 		print("geri takip etmeyenler: ")
 		sayac = 0
