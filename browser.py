@@ -3,6 +3,7 @@ import kullanıcı as kb
 import time
 from selenium.webdriver.chrome.options import Options
 
+cssstring = "._ab8y._ab94._ab97._ab9f._ab9k._ab9p._abcm"
 class Browser:
 	def __init__(self,link):
 		self.link = link
@@ -33,7 +34,7 @@ class Browser:
 		Browser.scrollDown(self)
 		time.sleep(2)
 
-		takipciler = self.browser.find_elements_by_css_selector(".oajrlxb2.g5ia77u1.qu0x051f.esr5mh6w.e9989ue4.r7d6kgcz.rq0escxv.nhd2j8a9.nc684nl6.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.jb3vyjys.rz4wbd8a.qt6c0cv9.a8nywdso.i1ao9s8h.esuyzwwr.f1sip0of.lzcic4wl.notranslate._a6hd") 
+		takipciler = self.browser.find_elements_by_css_selector(cssstring) 
 		sayac = 0
 		takipçiler = []
 		for takipci in takipciler:
@@ -57,7 +58,7 @@ class Browser:
 		time.sleep(4)
 		Browser.scrollDown(self)
 		time.sleep(2)
-		takip_edilenler = self.browser.find_elements_by_css_selector(".oajrlxb2.g5ia77u1.qu0x051f.esr5mh6w.e9989ue4.r7d6kgcz.rq0escxv.nhd2j8a9.nc684nl6.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.jb3vyjys.rz4wbd8a.qt6c0cv9.a8nywdso.i1ao9s8h.esuyzwwr.f1sip0of.lzcic4wl.notranslate._a6hd")
+		takip_edilenler = self.browser.find_elements_by_css_selector(cssstring)
 		takipler = []
 		sayac = 0
 		for takip in takip_edilenler:
@@ -112,12 +113,12 @@ class Browser:
      
 		verification_code = input("Enter verification code: ")
   
-		time.sleep(60)
+		time.sleep(5)
   
 		code = self.browser.find_element_by_name("verificationCode")
 		code.send_keys(verification_code)
   
-		verify_button = self.browser.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div[2]/button')
+		verify_button = self.browser.find_element_by_css_selector("._acan._acap._acas._aj1-")
 		verify_button.click()
 		time.sleep(10)
   

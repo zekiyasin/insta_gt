@@ -1,4 +1,5 @@
-import browser 
+import browser, os
+
 
 browser.Browser("https://www.instagram.com")
 browser.time.sleep(1000)
